@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  autoindex:
+  ingest:
     runs-on: ubuntu-latest
 
     permissions:
@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: arbetsmiljo/ingest@v1
+      - uses: arbetsmiljo/ingest@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           year: ${{ github.event.repository.name }}
